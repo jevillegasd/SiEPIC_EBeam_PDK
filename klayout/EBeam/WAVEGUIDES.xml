@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <waveguides>
-	<waveguide>
+	<waveguide> <!--Strip TE 1550 nm, w=500 nm-->
 	  <name>Strip TE 1550 nm, w=500 nm</name>
 	  <CML>EBeam</CML>
 	  <model>ebeam_wg_integral_1550</model>
 	  <bezier>0.20</bezier>
       <radius>5.0</radius>
       <width>0.5</width>
+	  <crossing>
+		<crossing_cell>ebeam_crossing4</crossing_cell>
+		<crossing_library>EBeam</crossing_library>
+		<crossing_offset>(0,0)</crossing_offset>
+	  </crossing>
+	  <sbends>1</sbends>
 	  <component>
 	    <layer>Si</layer>
 	    <width>0.5</width>
@@ -23,7 +29,7 @@
 	    <offset>0.0</offset>
 	  </component>
 	</waveguide>
-	<waveguide>
+	<waveguide> <!--Strip TE 1310 nm, w=410 nm-->
 	  <name>Strip TE 1310 nm, w=410 nm</name>
 	  <CML>EBeam</CML>
 	  <model>ebeam_wg_integral_1310</model>
@@ -45,7 +51,7 @@
 	    <offset>0.0</offset>
 	  </component>
 	</waveguide>
-	<waveguide>
+	<waveguide> <!--Strip TE 1310 nm, w=350 nm-->
 	  <name>Strip TE 1310 nm, w=350 nm</name>
 	  <CML>EBeam</CML>
 	  <model>ebeam_wg_integral_1310</model>
@@ -68,12 +74,18 @@
 	    <offset>0.0</offset>
 	  </component>
 	</waveguide>
-	<waveguide>
+	<waveguide> <!--Strip TM 1550 nm, w=500 nm-->
 	  <name>Strip TM 1550 nm, w=500 nm</name>
 	  <CML>EBeam</CML>
 	  <model>ebeam_wg_integral_1550</model>
       <radius>15.0</radius>
       <width>0.5</width>
+	  <crossing>
+		<crossing_cell>ebeam_crossing4</crossing_cell>
+		<crossing_library>EBeam</crossing_library>
+		<crossing_offset>(0,0)</crossing_offset>
+	  </crossing>
+	  <sbends>1</sbends>
 	  <component>
 	    <layer>Si</layer>
 	    <width>0.5</width>
