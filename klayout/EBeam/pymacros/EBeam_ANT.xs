@@ -7,6 +7,7 @@
 # input layers:
 
 si = layer("1/0")
+si_rib = layer("2/0")
 sin = layer("1/5")
 sietch1 = layer("11/0")
 sietch2 = layer("12/0")
@@ -15,7 +16,9 @@ ml = layer("12/0")
 mlopen = layer("13/0")
 mh = layer("11/0")
 
-
+# mask layers
+etch_si = si.or(si_rib).inverted
+etch_si90nm = si.inverted 
 
 # cross section calculations
 
@@ -28,9 +31,10 @@ x_oxide = grow(2.0)
 
 # silicon layer, and etching
 x_si = grow(0.22)
-etch_si = si.inverted 
+
 # waveguide, assume 3 degree sidewall, with mid-point being the desired width; bias = sin(3)*220.
 etch_angle = 3
+mask(etch_si90nm).etch(0.13, :taper => etch_angle, :bias =>  0, :into => x_si) 
 mask(etch_si).etch(0.22, :taper => etch_angle, :bias =>  0, :into => x_si) 
 x_si1 = x_si.dup
 
